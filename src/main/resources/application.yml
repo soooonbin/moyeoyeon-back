@@ -1,0 +1,28 @@
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  application:
+    name: moyeo
+  thymeleaf:
+    cache: false
+  main:
+    allow-bean-definition-overriding: true
+
+server:
+  port: 8080
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    root: info
+    com.moyeo: debug
+    org.mybatis: debug
+    jdbc.sqlonly: debug
+    jdbc.sqltiming: trace
+    jdbc.resultset: off
+    jdbc.audit: off
+    jdbc.connection: off

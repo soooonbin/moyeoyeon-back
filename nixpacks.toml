@@ -2,7 +2,7 @@
 nixPkgs = ["jdk17"]
 
 [phases.build]
-cmds = ["./gradlew bootJar -x test"]
+cmds = ["./gradlew clean bootJar -x test"]
 
 [start]
-cmd = "java -jar build/libs/*.jar"
+cmd = "java -Xmx512m -jar build/libs/*.jar"
